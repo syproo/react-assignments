@@ -1,0 +1,81 @@
+.bar {
+    background-color: #024b88;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 395px;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.todo-icon{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.todo-list {
+    width: 440px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    
+}
+
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+
+}
+
+.todo-add-btn {
+    background-color: #024b88;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 12px;
+    font-size: 16px;
+}
+
+.input-field {
+    width: 390px;
+    height: 40px;
+    outline: none;
+    padding: 0 20px;
+    font-size: 16px;
+    border-radius: 12px;
+    border: 5px solid;
+   
+}
+
+.add-todo {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tick-icon{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 12px;   
+}
+
+.input-field:hover {
+    border-color: #024b88;
+  }
+
+  .bar:hover {
+    border-color: white;
+  }
