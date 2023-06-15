@@ -1,34 +1,55 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [display,setdisplay]=useState("")
+
+  const [history,sethistory]=useState("")
+  
+  const buttonClick = (event) =>{
+    setdisplay(display + (event.target.value))
+  }
+
+  const result = () =>{
+    setdisplay(eval(display))
+    sethistory(display)
+  }
+
+  const Clear = () =>{
+    setdisplay("");
+    sethistory("");
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="container">
+        <h3 className="heading">Calculator</h3>
+        <hr className="line-1"/>
+        <input disabled className="display" value={history} type="text" placeholder=""/>
+        <input disabled className="display" value={display} type="text" placeholder="0"/>
+        <hr className="line-2"/>
+        <div className="btns">
+            <button value={7} onClick={buttonClick}>7</button>
+            <button value={8} onClick={buttonClick}>8</button>
+            <button value={9} onClick={buttonClick}>9</button>
+            <button className='operator' value={"/"} onClick={buttonClick}>/</button>
+            <button value={4} onClick={buttonClick}>4</button>
+            <button value={5} onClick={buttonClick}>5</button>
+            <button value={6} onClick={buttonClick}>6</button>
+            <button className='operator' value={"*"} onClick={buttonClick}>*</button>
+            <button value={1} onClick={buttonClick}>1</button>
+            <button value={2} onClick={buttonClick}>2</button>
+            <button value={3} onClick={buttonClick}>3</button>
+            <button className='operator' value={"+"} onClick={buttonClick}>+</button>
+            <button className='operator' value={"."} onClick={buttonClick}>.</button>
+            <button value={0} onClick={buttonClick}>0</button>
+            <button className='equal' value={"="} onClick={result}>=</button>
+            <button className='operator' value={"-"} onClick={buttonClick}>-</button>
+        </div>
+        <button className="clr-btn" onClick={Clear}>Clear</button>
+        <footer>Developed By: Salman Younas</footer>
+    </div>
+  </>
   )
 }
 
